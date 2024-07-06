@@ -1,8 +1,12 @@
-const { Client, Intents } = require('discord.js');
 const config = require('./config.json');
-
+const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
-    intents: [ 3276799 ],
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMembers,
+	],
 });
 
 client.once('Soul DMALL Work', async () => {
